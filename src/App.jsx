@@ -127,7 +127,7 @@ export default function App() {
               Henrique Pucci
             </h1>
             <div style={{ background: isHighContrast ? "none" : "linear-gradient(to right, #FBBF24, #D97706)", color: isHighContrast ? currentTheme.textPrimary : "transparent", WebkitBackgroundClip: isHighContrast ? "none" : "text", WebkitTextFillColor: isHighContrast ? "initial" : "transparent", fontSize: "calc(clamp(20px, 3vw, 30px) + var(--fs-offset))", fontWeight: 600, letterSpacing: "-0.02em", marginTop: 2 }}>
-              Engenharia de Software & Design de UX
+              Engenheiro de Software | UX/UI & Service Designer | Analista de Requisitos
             </div>
             <ToolBadges />
             <p style={{ fontSize: "calc(clamp(16px, 2vw, 18px) + var(--fs-offset))", lineHeight: 1.7, color: currentTheme.textSecondary, fontWeight: 300, marginTop: 14 }}>
