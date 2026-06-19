@@ -47,9 +47,28 @@ export const CloseIcon = () => (
   </svg>
 );
 
+export const LinkIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/>
+    <path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/>
+  </svg>
+);
+
+export const PdfIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+    <polyline points="14 2 14 8 20 8"/>
+    <path d="M8 13h2.5a1.5 1.5 0 010 3H8v-3z"/>
+    <path d="M15 13v3"/>
+    <path d="M12 13v3"/>
+  </svg>
+);
+
 export const ArtifactIcon = ({ type }) => {
   if (type === "miro") return <MiroIcon />;
   if (type === "figma") return <FigmaIcon />;
   if (type === "github") return <GithubIcon />;
+  if (type === "link") return <LinkIcon />;
+  if (type === "pdf") return <PdfIcon />;
   return <DocIcon />;
 };

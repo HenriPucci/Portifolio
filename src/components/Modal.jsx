@@ -23,25 +23,35 @@ export default function Modal({ project, onClose, theme }) {
   }, [onClose]);
 
   return (
-    <div style={{
-      position: "fixed", inset: 0, background: "rgba(0,0,0,0.85)",
-      backdropFilter: "blur(8px)", zIndex: 1000,
-      display: "flex", alignItems: "center", justifyContent: "center",
-      padding: "24px 16px"
-    }}>
-      <div ref={ref} style={{
-        background: theme.surface, border: `1px solid ${theme.border}`,
-        borderRadius: 16, width: "100%", maxWidth: 720,
-        maxHeight: "88vh", overflowY: "auto",
-        padding: "40px", position: "relative"
-      }}>
+    <div 
+      className="animate-backdrop"
+      style={{
+        position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)",
+        zIndex: 1000, display: "flex", alignItems: "center", justifyContent: "center",
+        padding: "24px 16px"
+      }}
+    >
+      <div 
+        ref={ref} 
+        className="animate-modal-content"
+        style={{
+          background: theme.surface, border: `1px solid ${theme.border}`,
+          borderRadius: 16, width: "100%", maxWidth: 720,
+          maxHeight: "88vh", overflowY: "auto",
+          padding: "40px", position: "relative"
+        }}
+      >
         
         <button onClick={onClose} style={{
           position: "absolute", top: 20, right: 20,
           background: "none", border: "none", cursor: "pointer",
           color: theme.textSecondary, padding: 8, borderRadius: 8,
-          display: "flex", alignItems: "center", justifyContent: "center"
-        }}>
+          display: "flex", alignItems: "center", justifyContent: "center",
+          transition: "all 0.2s"
+        }}
+          onMouseEnter={e => { e.currentTarget.style.background = "#ffffff08"; e.currentTarget.style.color = theme.textPrimary; }}
+          onMouseLeave={e => { e.currentTarget.style.background = "none"; e.currentTarget.style.color = theme.textSecondary; }}
+        >
           <CloseIcon />
         </button>
 
@@ -50,7 +60,7 @@ export default function Modal({ project, onClose, theme }) {
           textTransform: "uppercase", letterSpacing: 1.5,
           color: theme.accent, marginBottom: 12
         }}>
-          {project.tag}
+          {(project.tags && project.tags.length > 1 ? project.tags : [project.tag]).join(" · ")}
         </div>
 
         <h2 style={{
@@ -126,7 +136,9 @@ export default function Modal({ project, onClose, theme }) {
             {project.artifacts.map((a, i) => {
               const hasUrl = !!a.url;
               const Tag = hasUrl ? "a" : "div";
-              const tagProps = hasUrl ? { href: a.url, target: "_blank", rel: "noopener noreferrer" } : {};
+              const tagProps = hasUrl
+                ? { href: a.url, target: "_blank", rel: "noopener noreferrer" }
+                : {};
               return (
                 <Tag
                   key={i}
