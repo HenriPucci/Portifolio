@@ -116,6 +116,15 @@ export default function App() {
         ::-webkit-scrollbar-track { background: ${currentTheme.bg}; }
         ::-webkit-scrollbar-thumb { background: #27272A; border-radius: 3px; }
         .access-btn:focus { outline: 2px solid ${currentTheme.accent}; }
+        .hero-text-col { text-align: left; align-items: flex-start; }
+        .hero-cta-wrapper { justify-content: flex-start; }
+        @media (max-width: 960px) {
+          .hero-text-col { text-align: center !important; align-items: center !important; }
+          .hero-cta-wrapper { justify-content: center !important; }
+        }
+        @media (max-width: 585px) {
+          .nav-pill { display: none !important; }
+        }
       `}</style>
 
       {!isHighContrast && (
@@ -130,9 +139,9 @@ export default function App() {
         minHeight: "85vh", display: "flex", alignItems: "center", justifyContent: "center",
         padding: "100px clamp(24px, 6vw, 100px) 40px", position: "relative", zIndex: 1
       }}>
-        <div style={{ maxWidth: 1200, width: "100%", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))", gap: "80px", alignItems: "center", justifyItems: "center" }}>
+        <div style={{ maxWidth: 1200, width: "100%", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(380px, 100%), 1fr))", gap: "clamp(32px, 5vw, 80px)", alignItems: "center", justifyItems: "center" }}>
 
-          <div style={{ maxWidth: 680, width: "100%", display: "flex", flexDirection: "column", gap: 14, textAlign: "left", alignItems: "flex-start" }}>
+          <div className="hero-text-col" style={{ maxWidth: 680, width: "100%", display: "flex", flexDirection: "column", gap: 14 }}>
             <h1 style={{ fontFamily: "'DM Serif Display', serif", fontSize: "calc(clamp(54px, 7.5vw, 92px) + var(--fs-offset))", fontWeight: 400, lineHeight: 1, letterSpacing: "-0.02em", color: currentTheme.accent }}>
               Henrique Pucci
             </h1>
@@ -143,7 +152,7 @@ export default function App() {
             <p style={{ fontSize: "calc(clamp(16px, 2vw, 18px) + var(--fs-offset))", lineHeight: 1.7, color: currentTheme.textSecondary, fontWeight: 300, marginTop: 14 }}>
               {T.hero.description}
             </p>
-            <div style={{ display: "flex", marginTop: 20 }}>
+            <div className="hero-cta-wrapper" style={{ display: "flex", marginTop: 20 }}>
               <a href="#contato" aria-label={T.hero.ctaAriaLabel} style={{ padding: "14px 40px", border: `1px solid ${currentTheme.border}`, background: "rgba(255,255,255,0.02)", color: currentTheme.textPrimary, borderRadius: "50px", fontSize: "calc(14px + var(--fs-offset))", fontWeight: 500, textDecoration: "none", transition: "all 0.25s ease" }}
                 onMouseEnter={e => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 28px rgba(245,158,11,0.25)"; e.currentTarget.style.borderColor = currentTheme.borderHover; }}
                 onMouseLeave={e => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = currentTheme.border; }}
@@ -164,11 +173,12 @@ export default function App() {
 
       {/* MENU NAV */}
       <nav role="navigation" aria-label="Menu Principal" style={{ width: "100%", display: "flex", justifyContent: "center", padding: "32px 24px", position: "relative", zIndex: 10 }}>
-        <div style={{ display: "flex", gap: 4, background: currentTheme.surface, border: `1px solid ${currentTheme.border}`, padding: "6px", borderRadius: isHighContrast ? "0px" : "14px", justifyContent: "center", alignItems: "center", width: "fit-content", boxShadow: "0 24px 50px rgba(0,0,0,0.4), 0 0 40px rgba(245,158,11,0.08)" }}>
+        <div className="nav-pill" style={{ display: "flex", gap: 4, background: currentTheme.surface, border: `1px solid ${currentTheme.border}`, padding: "6px", borderRadius: isHighContrast ? "0px" : "14px", justifyContent: "center", alignItems: "center", width: "fit-content", boxShadow: "0 24px 50px rgba(0,0,0,0.4), 0 0 40px rgba(245,158,11,0.08)" }}>
           {T.nav.map((link, idx) => (
             <a
               key={idx}
               href={link.url}
+              className="nav-link"
               style={{ fontSize: "calc(11px + var(--fs-offset))", fontWeight: 600, letterSpacing: "1.5px", color: currentTheme.textSecondary, textDecoration: "none", padding: "10px 24px", borderRadius: isHighContrast ? "0px" : "10px", transition: "all 0.22s ease", display: "inline-block" }}
               onMouseEnter={e => {
                 e.currentTarget.style.color = currentTheme.textPrimary;
