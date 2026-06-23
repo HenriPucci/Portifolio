@@ -4,6 +4,7 @@ import { ArrowIcon, AccessibilityIcon } from "./components/Icons";
 import Modal from "./components/Modal";
 import ScrollReveal from "./components/ScrollReveal";
 import { TRANSLATIONS } from "./data/translations";
+import perfilImg from "./assets/perfil_portifolio.png";
 
 const THEME = {
   bg: "#09090B",
@@ -154,7 +155,7 @@ export default function App() {
 
           <div style={{ position: "relative", display: "flex", alignItems: "center", justifyContent: "center", width: "100%" }}>
             <div style={{ width: "clamp(320px, 34vw, 450px)", height: "clamp(320px, 34vw, 450px)", borderRadius: isHighContrast ? "0px" : "30% 70% 40% 60% / 50% 40% 60% 50%", border: `2px solid ${currentTheme.borderHover}`, padding: "14px", background: currentTheme.surface, boxShadow: "0 32px 64px rgba(0,0,0,0.6), 0 0 60px rgba(245,158,11,0.1)", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
-              <img src="/assets/perfil.jpeg" alt="Fotografia de perfil de Henrique Pucci" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "inherit" }} />
+              <img src={perfilImg} alt="Fotografia de perfil de Henrique Pucci" style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "inherit" }} />
             </div>
           </div>
 
