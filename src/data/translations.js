@@ -39,17 +39,17 @@ export const TRANSLATIONS = {
         {
           role: "Bolsista de Transformação Digital & UX",
           org: "ITRAC / UnB / Ministério da Economia / DTI / SGD",
-          desc: "Aplicação de dinâmicas de Discovery e levantamento de requisitos para modernização de serviços públicos. Desenvolvimento de artefatos de UX para garantir uma jornada do usuário fluida e eficiente."
+          desc: "Condução de iniciativas de Discovery em quatro órgãos federais, mapeando ecossistemas de serviços complexos e traduzindo regras de negócio governamentais em requisitos acionáveis de produto. Facilitação de workshops de co-criação com servidores e gestores, entregando artefatos estratégicos — Service Blueprints, jornadas do usuário e fluxos de ecossistema — para programas como ComprasGov, Bens Patrimoniais e Luz para Todos."
         },
         {
-          role: "Bolsista – Acessibilidade Digital",
+          role: "Bolsista — Acessibilidade Digital",
           org: "Ministério da Gestão e Inovação (MGI)",
-          desc: "Desenvolvimento do Guia Brasileiro de Acessibilidade Digital e Inclusão com a SGD. Publicação interna no domínio gov.br como artefato Plone."
+          desc: "Co-desenvolvimento do Guia Brasileiro de Acessibilidade Digital e Inclusão, convertendo normas WCAG 2.1 e eMAG em diretrizes práticas para o Design System Gov.br. O guia foi publicado no domínio oficial gov.br, estabelecendo padrões de acessibilidade para interfaces digitais de todo o governo federal brasileiro."
         },
         {
           role: "Contribuidor Open Source",
           org: "CAPJu & Debian Brasil Team",
-          desc: "Participação no projeto CAPJu para gestão de processos judiciais. Manutenção e atualização de pacotes para o Debian, correção de bugs e melhoria de documentação."
+          desc: "Correção de bugs, automação de testes e documentação técnica no CAPJu — sistema de gestão de processos judiciais da FGA/UnB — e manutenção de pacotes no ecossistema Debian/Linux."
         }
       ]
     },
@@ -166,17 +166,17 @@ export const TRANSLATIONS = {
         {
           role: "Digital Transformation & UX Fellow",
           org: "ITRAC / UnB / Ministry of Economy / DTI / SGD",
-          desc: "Application of Discovery dynamics and requirements gathering for the modernization of public services. Development of UX artifacts to ensure a smooth and efficient user journey."
+          desc: "Leadership of Discovery initiatives across four federal agencies, mapping complex service ecosystems and translating government business rules into actionable product requirements. Facilitation of co-creation workshops with civil servants and managers, delivering strategic artifacts — Service Blueprints, user journeys, and ecosystem flows — for programs such as ComprasGov, Public Assets, and Luz para Todos."
         },
         {
-          role: "Fellow – Digital Accessibility",
+          role: "Fellow — Digital Accessibility",
           org: "Ministry of Management and Innovation (MGI)",
-          desc: "Development of the Brazilian Guide to Digital Accessibility and Inclusion with SGD. Internal publication on the gov.br domain as a Plone artifact."
+          desc: "Co-development of the Brazilian Guide to Digital Accessibility and Inclusion, converting WCAG 2.1 and eMAG standards into practical guidelines for the Gov.br Design System. The guide was published on the official gov.br domain, establishing accessibility standards for digital interfaces across the entire Brazilian federal government."
         },
         {
           role: "Open Source Contributor",
           org: "CAPJu & Debian Brasil Team",
-          desc: "Participation in the CAPJu project for judicial process management. Maintenance and updating of packages for Debian, bug fixing and documentation improvement."
+          desc: "Bug fixes, test automation, and technical documentation in CAPJu — a judicial process management system from FGA/UnB — and package maintenance in the Debian/Linux ecosystem."
         }
       ]
     },
