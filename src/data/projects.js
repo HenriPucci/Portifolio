@@ -22,7 +22,21 @@ export const PROJECTS = [
       { type: "miro", label: "Oficina Ecossistema DTI", desc: "Board da oficina de mapeamento do ecossistema da DTI", url: "https://miro.com/app/board/uXjVJUTrDU0=/?share_link_id=94655737093" },
       { type: "miro", label: "Oficina Codesign Rateio", desc: "Board da oficina de codesign para fluxos de rateio orçamentário", url: "https://miro.com/app/board/uXjVIZew704=/" },
       { type: "miro", label: "Oficina Luz para Todos", desc: "Board da oficina de co-criação para o programa Luz para Todos", url: "https://miro.com/app/board/uXjVID17wec=/" },
-    ]
+    ],
+    translations: {
+      en: {
+        title: "Public Services Discovery",
+        summary: "Strategic involvement across multiple ministries — Economy, SGD, DTI, and MGI — conducting Discovery dynamics for the digital transformation of government services.",
+        context: "Throughout my career at ITRAC/UnB, I worked directly on digital transformation initiatives with four federal agencies: Ministry of Economy, Government Digital Secretariat (SGD), Technology and Innovation Directorate (DTI), and Ministry of Management and Innovation (MGI). In each front, the central challenge was the same: mapping complex service ecosystems and translating dense government business rules into actionable requirements for product teams.",
+        workshopDetail: "I facilitated multiple rounds of co-creation workshops with civil servants, managers, and technical teams from each ministry, using Service Design frameworks in Miro — Service Blueprints, journey maps, stakeholder diagrams, and ecosystem flows — to align visions and generate strategic inputs for prototyping and development.",
+        process: [
+          { step: "Immersion and Contextual Research", detail: "Interviews and active listening dynamics with public servants from different agencies to map pain points, real flows, and modernization opportunities." },
+          { step: "Co-creation Workshop Facilitation", detail: "Conducting structured sessions in Miro with multidisciplinary teams from the ministries, applying Design Thinking and Service Design methods to untangle bureaucratic process bottlenecks." },
+          { step: "Ecosystem and Journey Mapping", detail: "Building detailed Service Blueprints, stakeholder maps, and user journeys to document the current state and define the desired state of services." },
+          { step: "Requirements Gathering and Documentation", detail: "Structuring functional and non-functional requirements from the generated artifacts, delivered as direct inputs for the product and development teams at each agency." }
+        ]
+      }
+    }
   },
   {
     id: "respiracao-oral",
@@ -39,7 +53,20 @@ export const PROJECTS = [
     ],
     artifacts: [
       { type: "github", label: "Repositório GitHub", desc: "Código-fonte da plataforma", url: "https://github.com/Fonoaudiologia-Respiracao-Oral/Site-Curso-Respiracao-Oral" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "Oral Breathing Platform",
+        summary: "Interface and system development focused on an online course and awareness about oral breathing in speech therapy.",
+        context: "Partnership with speech therapy professionals to build an educational online platform. The target audience consisted of speech therapists and students in the field, requiring an interface that communicated scientific credibility with good usability.",
+        process: [
+          { step: "Research with Healthcare Professionals", detail: "Interviews with speech therapists to understand didactic needs and the learning flow." },
+          { step: "Information Architecture", detail: "Structuring the content hierarchy and navigation to optimize the study experience." },
+          { step: "Design and Implementation", detail: "Interface development in React with a focus on accessibility and responsiveness." },
+          { step: "Testing and Delivery", detail: "Validation with real course users and final adjustments before publication." }
+        ]
+      }
+    }
   },
   {
     id: "artigo-enase",
@@ -57,7 +84,20 @@ export const PROJECTS = [
     artifacts: [
       { type: "link", label: "Publicação Oficial ENASE", desc: "Acesso ao artigo na base da SciTePress", url: "https://www.scitepress.org/Link.aspx?doi=10.5220/0013257300003928" },
       { type: "pdf", label: "Acessar PDF do Artigo", desc: "Abrir artigo completo no navegador", url: "/assets/Exploring the Role of Service Design.pdf" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "International Paper - ENASE 2025",
+        summary: "International scientific publication focused on the role of Service Design in modern digital experiences.",
+        context: "Empirical research published in the proceedings of ENASE 2025 (International Conference on Evaluation of Novel Approaches to Software Engineering), investigating the strategic role of Service Design in building efficient, user-centered digital experiences.",
+        process: [
+          { step: "Research Problem Definition", detail: "Identification of gaps in the literature on the application of Service Design in digital systems." },
+          { step: "Systematic Literature Review", detail: "Structured analysis of scientific publications to support the empirical study." },
+          { step: "Empirical Study Conduct", detail: "Data collection and analysis with usability metrics and service design in real projects." },
+          { step: "International Publication", detail: "Submission, peer review, and presentation at the ENASE 2025 conference." }
+        ]
+      }
+    }
   },
   {
     id: "guia-acessibilidade",
@@ -75,7 +115,21 @@ export const PROJECTS = [
     ],
     artifacts: [
       { type: "pdf", label: "Acessar PDF do Guia", desc: "Abrir guia de acessibilidade no navegador", url: "/assets/Guia_Acessibilidade_GovBr.pdf" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "Brazilian Guide to Digital Accessibility",
+        summary: "Development of national guidelines and inclusive components alongside SGD and the Ministry of Management and Innovation (MGI).",
+        context: "National impact project with the Government Digital Secretariat (SGD) and the Ministry of Management and Innovation (MGI). The goal was to create a digital accessibility guide to orient the development of all gov.br portals, benefiting millions of citizens.",
+        workshopDetail: "I worked on converting complex technical standards of WCAG 2.1 and eMAG into practical guidelines and implementable components, collaborating with design and development teams from across the federal government.",
+        process: [
+          { step: "Research and Benchmarking", detail: "Analysis of WCAG 2.1, eMAG standards, and international digital accessibility references." },
+          { step: "Component Development", detail: "Creation of documented inclusive components for the gov.br Design System." },
+          { step: "Guideline Writing", detail: "Production of the guide's technical content in accessible language for government teams." },
+          { step: "Publication on gov.br", detail: "Publication as a Plone artifact on the official federal government domain." }
+        ]
+      }
+    }
   },
   {
     id: "anac-oficinas",
@@ -104,7 +158,23 @@ export const PROJECTS = [
       { type: "pdf", label: "Relatório — Safety Intelligence (Ciclo 1)", desc: "Acessar relatório completo da oficina", url: "/assets/ANAC/Relatório-ANAC-SAFETY INTELLIGENCE.pdf" },
       { type: "pdf", label: "Relatório — Safety Intelligence (Ciclo 2)", desc: "Acessar relatório completo da oficina", url: "/assets/ANAC/Relatório-ANAC-SAFETY INTELLIGENCE-Ciclo2 (1).pdf" },
       { type: "pdf", label: "Relatório — Jornada do Passageiro Inframerica", desc: "Acessar relatório completo da oficina", url: "/assets/ANAC/Oficina de cocriação com a Inframerica.pdf" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "ANAC — Service Design Workshop Cycle",
+        summary: "Facilitation of multiple Design Sprint cycles and co-creation workshops at ANAC, covering 8 strategic fronts of digital transformation in Brazilian civil aviation.",
+        context: "Throughout 2024, I conducted an extensive cycle of Service Design workshops at the National Civil Aviation Agency (ANAC), covering fronts ranging from the digitization of the Flight Logbook to data integration between ANAC and DECEA. Each workshop was structured as an adapted 2 to 4-day Design Sprint, bringing together distinct superintendencies (SAR, STD, SPO, SFI, SPI) around real and complex regulatory problems, with the goal of redesigning citizen-centered services.",
+        workshopDetail: "The workshops combined methodologies such as Lean Inception, World Café, Crazy 8, Service Blueprint, User Journey, and MVP Canvas. Each cycle was carefully planned to evolve from immersion and diagnosis to prototyping and validation, generating strategic artifacts (personas, storyboards, blueprints, and roadmaps) that fed product decisions in each ANAC area.",
+        process: [
+          { step: "Digital Flight Logbook", detail: "3-day workshop (Disney method + World Café) to investigate the low adoption of the Digital Flight Logbook by regulated entities. Generation of evidence memorials, personas, and action plans to increase data submission to ANAC." },
+          { step: "Financial HUB & Aircraft Registry", detail: "Two parallel fronts using an adapted Design Sprint: priority mapping (impact × effort matrix), problem statement and reframing, proto-persona definition, and storyboard building for the financial and aircraft registration systems." },
+          { step: "PEL Platform & Certification Matrix", detail: "Workshops focused on Flight Training Organizations (PEL) and the aviation certification journey (CERTIFICA Startup). Survey application with stakeholders, 4-day Service Blueprint, touchpoint mapping, and proposing improvements centered on the regulated entity's experience." },
+          { step: "ANAC × DECEA Integration", detail: "2-day workshop to identify data and services of common interest between the two agencies. Patchwork Quilt dynamics, Services Cauldron, and medium and long-term roadmap definition for technical and normative integrations." },
+          { step: "Safety Intelligence (2 Cycles)", detail: "2-day Lean Inception (Cycle 1/Jun 2024) to define product vision, personas, and MVP Canvas for the safety intelligence system. Cycle 2 (Oct 2024) focused on Future Blueprint, journey mapping, and efficiency proposals for the standardized indicator repository." },
+          { step: "Passenger Journey — Inframerica", detail: "3-hour co-creation workshop with the Brasília airport concessionaire, structuring passenger engagement strategies by profile (persona), touchpoint, and tone of voice, resulting in approach prototypes voted on by participants." }
+        ]
+      }
+    }
   },
   {
     id: "capju",
@@ -122,7 +192,20 @@ export const PROJECTS = [
     artifacts: [
       { type: "link", label: "Documentação Oficial", desc: "Acesso à documentação do projeto CAPJu", url: "https://fga-eps-mds.github.io/2022-2-CAPJu-Doc/#/" },
       { type: "github", label: "Repositório do Projeto", desc: "Acesso ao repositório do projeto CAPJu", url: "https://github.com/fga-eps-mds/2022-2-CAPJu-Doc" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "CAPJu - Judicial Process Management",
+        summary: "Open source contribution and development in software architecture and maintenance of the judicial system for FGA.",
+        context: "CAPJu is an open source judicial process management system developed for the Gama Faculty (FGA/UnB). I contributed to the system's evolutionary maintenance, working on a real project with direct impact on the university's legal flow.",
+        process: [
+          { step: "Onboarding and Code Analysis", detail: "Study of the existing architecture and module mapping to understand the system flow." },
+          { step: "Bug Identification and Fixing", detail: "Investigation of reported issues and implementation of fixes in the backend and frontend." },
+          { step: "Test Automation", detail: "Development of automated test cases to ensure the stability of critical functionalities." },
+          { step: "Documentation Contribution", detail: "Update of technical documentation to facilitate onboarding of new contributors." }
+        ]
+      }
+    }
   },
   {
     id: "ans-sgd",
@@ -142,7 +225,21 @@ export const PROJECTS = [
       { type: "figma", label: "Protótipo Interativo", desc: "Visualizar o protótipo de alta fidelidade no Figma", url: "https://www.figma.com/proto/t1p7rsjgNveiiDiSJOM7L8/SGD---ANS?page-id=0%3A1&type=design&node-id=334-3072&viewport=-1844%2C-507%2C1.54&t=lDdqm2gzOBQbD3Tt-1&scaling=scale-down&starting-point-node-id=334%3A3072" },
       { type: "miro", label: "Quadro de Mapeamento", desc: "Service Blueprint e jornadas no Miro", url: "https://miro.com/app/board/uXjVNlWwktI=/" },
       { type: "pdf", label: "Acessar Relatório", desc: "Abrir relatório completo no navegador", url: "/assets/Relatório -  ANS.pdf" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "ANS - National Supplementary Health Agency",
+        summary: "Redesign of ANS digital services in partnership with SGD, combining user research, flow mapping, and high-fidelity prototyping.",
+        context: "Project developed in partnership with the Government Digital Secretariat (SGD) to modernize the digital services of the National Supplementary Health Agency (ANS). The challenge involved understanding complex regulatory flows and transforming them into intuitive experiences for citizens and health operators.",
+        workshopDetail: "I conducted collaborative mapping sessions in Miro with ANS and SGD stakeholders, structuring service blueprints and user journeys to identify bottlenecks in the service and regulation processes.",
+        process: [
+          { step: "Discovery and Research", detail: "Requirements gathering and user research to understand the service flows and needs of health plan beneficiaries." },
+          { step: "Service Mapping", detail: "Service Blueprint and journey map structuring in Miro, documenting regulatory flows and friction points between citizens and the system." },
+          { step: "High-Fidelity Prototyping", detail: "Development of interactive prototypes in Figma focused on clarity, accessibility, and alignment with the Gov.br Design System." },
+          { step: "Documentation and Delivery", detail: "Production of a technical report consolidating findings, design decisions, and strategic recommendations for the product." }
+        ]
+      }
+    }
   },
   {
     id: "acidentes-aereos-etl",
@@ -159,7 +256,20 @@ export const PROJECTS = [
     ],
     artifacts: [
       { type: "github", label: "Repositório GitHub", desc: "Código-fonte completo do pipeline ETL e visualizações", url: "https://github.com/rodrigogontijoo/acidentes-aereos-etl-visualization" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "ETL & Visualization — Aeronautical Accidents",
+        summary: "Complete ETL pipeline architecture for consolidation and visualization of Brazilian civil aeronautical accident data.",
+        context: "Data engineering project focused on building a robust ETL pipeline for ingestion, processing, and consolidation of CENIPA's civil aeronautical accident databases. The goal was to transform raw and fragmented data into a clean dataset ready for analysis and visualization.",
+        process: [
+          { step: "Data Extraction and Ingestion", detail: "Automated collection of CENIPA public databases, integrating multiple data sources in heterogeneous formats." },
+          { step: "Transformation and Cleaning (ETL)", detail: "Handling inconsistencies, field standardization, deduplication, and record enrichment using Python and SQL." },
+          { step: "Data Warehouse Modeling", detail: "Creation of a relational schema optimized for analytical queries, with staging and final consolidated layer via DBeaver and Docker." },
+          { step: "Visualization and Analysis", detail: "Development of dashboards and interactive visualizations to explore patterns and trends in civil aeronautical accidents." }
+        ]
+      }
+    }
   },
   {
     id: "projeto-amazon",
@@ -178,7 +288,21 @@ export const PROJECTS = [
     artifacts: [
       { type: "link", label: "Documentação do Projeto", desc: "GitHub Pages com toda a documentação arquitetural", url: "https://unbarqdsw2023-2.github.io/2023.2_G3_ProjetoAmazon/#/" },
       { type: "github", label: "Repositório GitHub", desc: "Código-fonte e artefatos de modelagem", url: "https://github.com/UnBArqDsw2023-2/2023.2_G3_ProjetoAmazon" }
-    ]
+    ],
+    translations: {
+      en: {
+        title: "Amazon Project - Software Architecture (UnB)",
+        summary: "Software architecture modeling and documentation for an Amazon-inspired ecosystem, applying GoF, GRASP patterns, and UML notations.",
+        context: "Project from the Software Architecture and Design course at UnB (2023.2), focused on analyzing and modeling an e-commerce system inspired by Amazon. It involved research on architectural patterns, interface design, and collaborative software engineering in a multidisciplinary team.",
+        workshopDetail: "The project was developed as a team using agile methodology with short sprints, artifact reviews, and collaborative documentation on GitHub Pages, covering everything from UML modeling to user experience prototyping.",
+        process: [
+          { step: "UML Modeling and Diagramming", detail: "Elaboration of class, sequence, state, and use case diagrams to document the system architecture." },
+          { step: "Design Pattern Application", detail: "Implementation of GoF patterns (creational, structural, and behavioral) and GRASP to structure the solution." },
+          { step: "Experience Design", detail: "Usability research and prototyping of user flows for the modeled e-commerce ecosystem." },
+          { step: "Documentation and GitHub Pages", detail: "Publication of complete technical documentation via GitHub Pages with architectural decision records (ADRs)." }
+        ]
+      }
+    }
   }
 ];
 

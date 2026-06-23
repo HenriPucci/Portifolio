@@ -1,39 +1,34 @@
 import React, { useState, useEffect, useRef } from "react";
 
 export default function ScrollReveal({ children }) {
-  const [isVisible, setIsVisible] = useState(false);
+  const prefersReduced = typeof window !== "undefined"
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const [isVisible, setIsVisible] = useState(prefersReduced);
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    if (prefersReduced) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Quando 10% da seção estiver visível na tela
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // Opcional: para de observar após animar uma vez
           if (sectionRef.current) observer.unobserve(sectionRef.current);
         }
       },
-      {
-        threshold: 0.1, // Dispara quando 10% do elemento aparece
-        rootMargin: "0px 0px -50px 0px" // Dispara um pouquinho antes de tocar o fundo da tela
-      }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
-  }, []);
+  }, [prefersReduced]);
 
   return (
-    <div
-      ref={sectionRef}
-      className={`reveal-section ${isVisible ? "is-visible" : ""}`}
-    >
+    <div ref={sectionRef} className={`reveal-section ${isVisible ? "is-visible" : ""}`}>
       {children}
     </div>
   );

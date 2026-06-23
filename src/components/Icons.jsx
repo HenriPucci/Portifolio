@@ -64,6 +64,16 @@ export const PdfIcon = () => (
   </svg>
 );
 
+export const AccessibilityIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <circle cx="12" cy="4.5" r="2.5"/>
+    <rect x="4.5" y="9" width="15" height="2" rx="1"/>
+    <rect x="11" y="10.5" width="2" height="6.5" rx="1"/>
+    <path d="M9.8 17L7 23h2.2l2.3-5.2c-.6-.1-1.2-.4-1.7-.8z"/>
+    <path d="M14.2 17c-.5.4-1.1.7-1.7.8L14.8 23H17l-2.8-6z"/>
+  </svg>
+);
+
 export const ArtifactIcon = ({ type }) => {
   if (type === "miro") return <MiroIcon />;
   if (type === "figma") return <FigmaIcon />;

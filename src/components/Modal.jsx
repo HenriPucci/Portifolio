@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { CloseIcon, ArtifactIcon, ArrowIcon } from "./Icons";
 
-export default function Modal({ project, onClose, theme }) {
+export default function Modal({ project, onClose, theme, lang, modalT, getP, categoryLabels }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function Modal({ project, onClose, theme }) {
     document.addEventListener("mousedown", handler);
     document.addEventListener("keydown", keyHandler);
     document.body.style.overflow = "hidden";
-    
+
     return () => {
       document.removeEventListener("mousedown", handler);
       document.removeEventListener("keydown", keyHandler);
@@ -22,8 +22,13 @@ export default function Modal({ project, onClose, theme }) {
     };
   }, [onClose]);
 
+  const title = getP(project, 'title');
+  const context = getP(project, 'context');
+  const workshopDetail = getP(project, 'workshopDetail');
+  const process = getP(project, 'process');
+
   return (
-    <div 
+    <div
       className="animate-backdrop"
       style={{
         position: "fixed", inset: 0, background: "rgba(0,0,0,0.75)",
@@ -31,8 +36,8 @@ export default function Modal({ project, onClose, theme }) {
         padding: "24px 16px"
       }}
     >
-      <div 
-        ref={ref} 
+      <div
+        ref={ref}
         className="animate-modal-content"
         style={{
           background: theme.surface, border: `1px solid ${theme.border}`,
@@ -41,7 +46,7 @@ export default function Modal({ project, onClose, theme }) {
           padding: "40px", position: "relative"
         }}
       >
-        
+
         <button onClick={onClose} style={{
           position: "absolute", top: 20, right: 20,
           background: "none", border: "none", cursor: "pointer",
@@ -60,7 +65,7 @@ export default function Modal({ project, onClose, theme }) {
           textTransform: "uppercase", letterSpacing: 1.5,
           color: theme.accent, marginBottom: 12
         }}>
-          {(project.tags && project.tags.length > 1 ? project.tags : [project.tag]).join(" · ")}
+          {(project.tags && project.tags.length > 1 ? project.tags : [project.tag]).map(t => categoryLabels[t]).join(" · ")}
         </div>
 
         <h2 style={{
@@ -68,28 +73,28 @@ export default function Modal({ project, onClose, theme }) {
           fontSize: "clamp(22px, 4vw, 30px)", fontWeight: 400,
           color: theme.textPrimary, lineHeight: 1.25, margin: "0 0 20px"
         }}>
-          {project.title}
+          {title}
         </h2>
 
         <div style={{ marginBottom: 28 }}>
           <h4 style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.5, color: theme.textMuted, marginBottom: 8 }}>
-            O Contexto
+            {modalT.contextLabel}
           </h4>
           <p style={{ fontSize: 14, lineHeight: 1.7, color: theme.textSecondary }}>
-            {project.context}
+            {context}
           </p>
         </div>
 
-        {project.workshopDetail && (
+        {workshopDetail && (
           <div style={{
             marginBottom: 32, padding: "16px 20px", borderRadius: 10,
             background: "#ffffff03", borderLeft: `3px solid ${theme.accent}`
           }}>
             <h4 style={{ fontSize: 11, fontWeight: 600, textTransform: "uppercase", letterSpacing: 1.2, color: theme.accent, marginBottom: 6 }}>
-              Abordagem Prática & Facilitação de Oficinas
+              {modalT.workshopLabel}
             </h4>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: theme.textPrimary }}>
-              {project.workshopDetail}
+              {workshopDetail}
             </p>
           </div>
         )}
@@ -99,10 +104,10 @@ export default function Modal({ project, onClose, theme }) {
             fontSize: 11, fontWeight: 600, textTransform: "uppercase",
             letterSpacing: 1.5, color: theme.textMuted, margin: "0 0 16px"
           }}>
-            Processo Executado
+            {modalT.processLabel}
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-            {project.process.map((p, i) => (
+            {process.map((p, i) => (
               <div key={i} style={{ display: "flex", gap: 16 }}>
                 <div style={{
                   width: 24, height: 24, borderRadius: "50%",
@@ -130,7 +135,7 @@ export default function Modal({ project, onClose, theme }) {
             fontSize: 11, fontWeight: 600, textTransform: "uppercase",
             letterSpacing: 1.5, color: theme.textMuted, margin: "0 0 12px"
           }}>
-            Entregáveis & Evidências
+            {modalT.artifactsLabel}
           </h3>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {project.artifacts.map((a, i) => {
@@ -175,7 +180,7 @@ export default function Modal({ project, onClose, theme }) {
                     <div style={{ fontSize: 11, color: theme.textSecondary, marginTop: 1 }}>{a.desc}</div>
                   </div>
                   <div style={{ flexShrink: 0, color: hasUrl ? theme.accent : theme.textMuted, fontSize: 11 }}>
-                    {hasUrl ? <ArrowIcon /> : "link restrito / interno"}
+                    {hasUrl ? <ArrowIcon /> : modalT.restricted}
                   </div>
                 </Tag>
               );
