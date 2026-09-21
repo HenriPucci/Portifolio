@@ -65,12 +65,22 @@ export const PdfIcon = () => (
 );
 
 export const AccessibilityIcon = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <circle cx="12" cy="4.5" r="2.5"/>
-    <rect x="4.5" y="9" width="15" height="2" rx="1"/>
-    <rect x="11" y="10.5" width="2" height="6.5" rx="1"/>
-    <path d="M9.8 17L7 23h2.2l2.3-5.2c-.6-.1-1.2-.4-1.7-.8z"/>
-    <path d="M14.2 17c-.5.4-1.1.7-1.7.8L14.8 23H17l-2.8-6z"/>
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.7"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <circle cx="12" cy="12" r="9.4" />
+    <circle cx="12" cy="6.9" r="1.35" fill="currentColor" stroke="none" />
+    <path d="M6.9 9.9c3.4 1.05 6.8 1.05 10.2 0" />
+    <path d="M12 10.1v4.1" />
+    <path d="M12 14.2 9.7 18.5M12 14.2l2.3 4.3" />
   </svg>
 );
 
@@ -82,3 +92,10 @@ export const ArtifactIcon = ({ type }) => {
   if (type === "pdf") return <PdfIcon />;
   return <DocIcon />;
 };
+export const MenuIcon = () => (
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true">
+    <line x1="3.5" y1="7" x2="20.5" y2="7"/>
+    <line x1="3.5" y1="12" x2="20.5" y2="12"/>
+    <line x1="3.5" y1="17" x2="20.5" y2="17"/>
+  </svg>
+);

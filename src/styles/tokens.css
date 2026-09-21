@@ -1,0 +1,112 @@
+/* ---------------------------------------------------------------------------
+   Tokens de design. Fonte única de cor, tipografia, espaço e movimento.
+   Tema padrão: escuro. Tema de alto contraste em [data-theme="contrast"].
+--------------------------------------------------------------------------- */
+
+:root {
+  /* superfícies */
+  --bg: #0b0b0c;
+  --bg-elev: #131315;
+  --surface: #17171a;
+  --surface-hover: #1d1d21;
+
+  /* linhas */
+  --line: rgba(255, 255, 255, 0.09);
+  --line-strong: rgba(255, 255, 255, 0.2);
+
+  /* texto */
+  --text: #f2f1ee;
+  --text-2: #adaba6;
+  --text-3: #8d8b86;
+
+  /* acento */
+  --accent: #e8a33d;
+  --accent-bright: #f2bd6b;
+  --accent-soft: rgba(232, 163, 61, 0.1);
+  --accent-line: rgba(232, 163, 61, 0.32);
+  --on-accent: #17120a;
+
+  /* estados */
+  --focus: #f2bd6b;
+  --success: #4ea87a;
+  --danger: #e2685f;
+
+  /* tipografia */
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --fs-scale: 1;
+
+  --step--1: clamp(0.84rem, 0.81rem + 0.12vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.13rem);
+  --step-1: clamp(1.2rem, 1.12rem + 0.36vw, 1.42rem);
+  --step-2: clamp(1.5rem, 1.32rem + 0.78vw, 2.05rem);
+  --step-3: clamp(2rem, 1.62rem + 1.7vw, 3.2rem);
+  --step-4: clamp(2.7rem, 1.95rem + 3.4vw, 5.2rem);
+
+  /* espaço */
+  --space-1: 0.375rem;
+  --space-2: 0.75rem;
+  --space-3: 1.125rem;
+  --space-4: 1.75rem;
+  --space-5: 2.5rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+  --gutter: clamp(1.25rem, 5vw, 5rem);
+  --measure: 66ch;
+  --max-w: 72rem;
+
+  /* formas */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  /* movimento */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-1: 150ms;
+  --dur-2: 280ms;
+  --dur-3: 520ms;
+
+  /* profundidade */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 12px 32px rgba(0, 0, 0, 0.45);
+  --shadow-3: 0 28px 70px rgba(0, 0, 0, 0.6);
+
+  color-scheme: dark;
+}
+
+[data-theme="contrast"] {
+  --bg: #000000;
+  --bg-elev: #000000;
+  --surface: #0a0a0a;
+  --surface-hover: #161616;
+
+  --line: #ffffff;
+  --line-strong: #ffffff;
+
+  --text: #ffffff;
+  --text-2: #ffffff;
+  --text-3: #ffffff;
+
+  --accent: #ffee00;
+  --accent-bright: #ffee00;
+  --accent-soft: rgba(255, 238, 0, 0.15);
+  --accent-line: #ffee00;
+  --on-accent: #000000;
+
+  --focus: #ffee00;
+  --success: #00ff90;
+  --danger: #ff8a80;
+
+  --radius-sm: 0;
+  --radius: 0;
+  --radius-lg: 0;
+  --radius-pill: 0;
+
+  --shadow-1: none;
+  --shadow-2: none;
+  --shadow-3: none;
+}
