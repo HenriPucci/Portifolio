@@ -19,10 +19,7 @@ export const PERFIL = {
   linkedin: "https://linkedin.com/in/henrique-pucci",
   github: "https://github.com/HenriPucci",
   site: "https://hpportifolio.vercel.app",
-  local: "Brasília, DF, Brasil",
-  // Para trocar o currículo, substitua este arquivo em public/assets/ mantendo o nome.
-  curriculo: "/assets/Curriculo_Henrique_Pucci.pdf",
-  curriculoDownload: "Henrique-Pucci-Analista-de-Requisitos.pdf"
+  local: "Brasília, DF, Brasil"
 };
 
 export const TRANSLATIONS = {
@@ -43,7 +40,6 @@ export const TRANSLATIONS = {
       role: "Analista de Requisitos e Produto",
       lede: "Atuo desde 2021 em transformação digital de serviços públicos e regulatórios. Planejo e facilito ciclos de Discovery e Service Design e transformo regras de negócio e pesquisa com usuários em requisitos, jornadas, service blueprints, protótipos e roadmaps. Minha formação em Engenharia de Software me permite conectar necessidade de negócio, experiência do usuário e viabilidade técnica.",
       ctaPrimary: "Ver projetos",
-      ctaResume: "Baixar currículo",
       ctaLinkedin: "LinkedIn",
       ctaContact: "Falar comigo",
       portraitAlt: "Retrato de Henrique Pucci.",
@@ -186,7 +182,6 @@ export const TRANSLATIONS = {
       copy: "Copiar",
       copied: "Copiado",
       copyAria: "Copiar endereço de e-mail",
-      resume: "Baixar currículo em PDF",
       links: [
         { platform: "LinkedIn", label: "Conectar no LinkedIn", url: "https://linkedin.com/in/henrique-pucci" },
         { platform: "GitHub", label: "Ver repositórios", url: "https://github.com/HenriPucci" }
@@ -260,7 +255,6 @@ export const TRANSLATIONS = {
       role: "Requirements and Product Analyst",
       lede: "Since 2021 I have worked on the digital transformation of public and regulatory services. I plan and facilitate Discovery and Service Design cycles and turn business rules and user research into requirements, journeys, service blueprints, prototypes and roadmaps. My Software Engineering background lets me connect business needs, user experience and technical feasibility.",
       ctaPrimary: "See the work",
-      ctaResume: "Download CV",
       ctaLinkedin: "LinkedIn",
       ctaContact: "Get in touch",
       portraitAlt: "Portrait of Henrique Pucci.",
@@ -403,7 +397,6 @@ export const TRANSLATIONS = {
       copy: "Copy",
       copied: "Copied",
       copyAria: "Copy email address",
-      resume: "Download CV as PDF",
       links: [
         { platform: "LinkedIn", label: "Connect on LinkedIn", url: "https://linkedin.com/in/henrique-pucci" },
         { platform: "GitHub", label: "Browse repositories", url: "https://github.com/HenriPucci" }

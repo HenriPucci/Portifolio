@@ -1,4 +1,4 @@
-import { ArrowIcon, DownloadIcon } from "./Icons";
+import { ArrowIcon } from "./Icons";
 import { PERFIL } from "../data/translations";
 import recorte from "../assets/henrique-recorte-limpo.webp";
 
@@ -26,16 +26,6 @@ export default function Hero({ t }) {
               <span className="btn__arrow" aria-hidden="true">
                 <ArrowIcon />
               </span>
-            </a>
-            <a
-              className="btn btn--ghost"
-              href={PERFIL.curriculo}
-              download={PERFIL.curriculoDownload}
-            >
-              <span aria-hidden="true">
-                <DownloadIcon />
-              </span>
-              {t.hero.ctaResume}
             </a>
             <a
               className="btn btn--ghost"

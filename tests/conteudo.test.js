@@ -170,9 +170,10 @@ describe("links e privacidade", () => {
     }
   });
 
-  it("aponta o currículo para um arquivo dentro de public", () => {
-    expect(PERFIL.curriculo).toBe("/assets/Curriculo_Henrique_Pucci.pdf");
-    expect(PERFIL.curriculoDownload).toMatch(/\.pdf$/);
+  it("não expõe currículo para download", () => {
+    expect(PERFIL.curriculo).toBeUndefined();
+    expect(TEXTO.toLowerCase()).not.toContain("baixar currículo");
+    expect(TEXTO.toLowerCase()).not.toContain("download cv");
   });
 });
 

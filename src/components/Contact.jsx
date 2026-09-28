@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 import { PERFIL } from "../data/translations";
-import { CheckIcon, CopyIcon, DownloadIcon } from "./Icons";
+import { CheckIcon, CopyIcon } from "./Icons";
 
 const ENDPOINT = import.meta.env.VITE_FORMSPREE_ENDPOINT || "https://formspree.io/f/mvznjqap";
 const EMAIL_VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -93,19 +93,6 @@ export default function Contact({ t }) {
           </p>
 
           <div className="contact-links">
-            <a
-              className="contact-link"
-              href={PERFIL.curriculo}
-              download={PERFIL.curriculoDownload}
-            >
-              <span>
-                <span className="contact-link__platform">PDF</span>
-                <span className="contact-link__label">{t.contact.resume}</span>
-              </span>
-              <span aria-hidden="true">
-                <DownloadIcon />
-              </span>
-            </a>
             {t.contact.links.map((link) => (
               <a
                 key={link.platform}

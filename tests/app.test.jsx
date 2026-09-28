@@ -24,21 +24,22 @@ describe("estrutura da página", () => {
     expect(screen.getByText("Analista de Requisitos e Produto")).toBeInTheDocument();
   });
 
-  it("oferece os quatro caminhos de ação no topo", () => {
+  it("oferece os caminhos de ação no topo", () => {
     const { container } = render(<App />);
     const topo = within(container.querySelector("#home"));
 
     expect(topo.getByRole("link", { name: /ver projetos/i })).toBeInTheDocument();
-    expect(topo.getByRole("link", { name: /baixar currículo/i })).toBeInTheDocument();
     expect(topo.getByRole("link", { name: /linkedin/i })).toBeInTheDocument();
     expect(topo.getByRole("link", { name: /falar comigo/i })).toBeInTheDocument();
   });
 
-  it("aponta o currículo para o PDF com nome de arquivo profissional", () => {
+  it("não oferece download de currículo", () => {
     render(<App />);
-    const [botao] = screen.getAllByRole("link", { name: /baixar currículo/i });
-    expect(botao).toHaveAttribute("href", "/assets/Curriculo_Henrique_Pucci.pdf");
-    expect(botao).toHaveAttribute("download", "Henrique-Pucci-Analista-de-Requisitos.pdf");
+    expect(screen.queryByRole("link", { name: /currículo|curriculo|\bCV\b/i })).not.toBeInTheDocument();
+    for (const link of screen.getAllByRole("link")) {
+      expect(link.getAttribute("href") || "").not.toMatch(/Curriculo/i);
+      expect(link.hasAttribute("download")).toBe(false);
+    }
   });
 
   it("abre todo link externo de forma segura", () => {

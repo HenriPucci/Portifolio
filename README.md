@@ -24,7 +24,6 @@ npm run preview    # serve o build de produção
 | Dados de contato, links e caminho do currículo | `PERFIL`, em `src/data/translations.js` |
 | Imagens dos artefatos e legendas | `src/data/media.js` e `public/assets/projetos/` |
 | Título, descrição, Open Graph e JSON-LD | `index.html` |
-| Currículo em PDF | `public/assets/Curriculo_Henrique_Pucci.pdf` |
 
 O português é a fonte de verdade de cada projeto. A tradução vive no campo `en`
 do mesmo objeto, e o campo que não existir em `en` cai automaticamente para o
@@ -45,7 +44,13 @@ Duas regras que os testes cobrem e que devem ser mantidas:
 - **`role` fica em primeira pessoa e em voz ativa.** "Planejei", "Facilitei",
   "Construí", "Converti". Os testes recusam "participei", "ajudei" e "auxiliei".
 
-## Privacidade dos relatórios
+## Privacidade
+
+O currículo em PDF não é oferecido no site. O arquivo vive em
+`private/Curriculo_Henrique_Pucci.pdf`, fora do deploy, porque traz telefone e
+e-mail pessoais. Para voltar a oferecer o download, mova o arquivo para
+`public/assets/`, devolva `curriculo` e `curriculoDownload` à constante `PERFIL`
+e recoloque o link no topo e na seção de contato.
 
 Os relatórios das oficinas da ANAC e da ANS contêm nomes, e-mails e imagens de
 participantes. Eles saíram de `public/` e vivem em `private/relatorios/`, que não
@@ -87,13 +92,9 @@ equivalente a 400% como 320 px.
 
 ## Pendências que dependem do proprietário
 
-1. **O PDF do currículo está desatualizado.** O arquivo em
-   `public/assets/Curriculo_Henrique_Pucci.pdf` ainda diz "Engenheiro de Software
-   em formação" e "Inglês Intermediário", que o site já corrigiu. Substitua o
-   arquivo mantendo o mesmo nome e o botão de download continua funcionando.
-2. **Relatórios como evidência.** Enquanto não houver versão editada, as
+1. **Relatórios como evidência.** Enquanto não houver versão editada, as
    evidências de ANAC e ANS aparecem sem link.
-3. **Variável de ambiente do formulário.** `VITE_FORMSPREE_ENDPOINT` deve estar
+2. **Variável de ambiente do formulário.** `VITE_FORMSPREE_ENDPOINT` deve estar
    configurada na Vercel. Sem ela o formulário usa o endpoint embutido.
 
 ## Decisão registrada: renderização
