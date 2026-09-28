@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Henrique Pucci · Service Design e Engenharia de Software</title>
-    <meta name="description" content="Portfólio de Henrique Pucci: Service Design, UX/UI e engenharia de software aplicados à transformação digital do governo federal brasileiro. ANAC, ANS, SGD e MGI." />
+    <title>Henrique Pucci · Analista de Requisitos e Produto</title>
+    <meta
+      name="description"
+      content="Analista de Requisitos e Produto com atuação desde 2021 em transformação digital de serviços públicos e regulatórios. Discovery, Service Design, UX Research e acessibilidade digital na ANAC, ANS, SGD e MGI."
+    />
     <meta name="author" content="Henrique Pucci" />
     <link rel="canonical" href="https://hpportifolio.vercel.app/" />
 
@@ -13,21 +16,27 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="profile" />
     <meta property="og:site_name" content="Henrique Pucci" />
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:url" content="https://hpportifolio.vercel.app/" />
-    <meta property="og:title" content="Henrique Pucci · Service Design e Engenharia de Software" />
-    <meta property="og:description" content="Service Design, UX/UI e engenharia de software aplicados à transformação digital do governo federal brasileiro. ANAC, ANS, SGD e MGI." />
+    <meta property="og:title" content="Henrique Pucci · Analista de Requisitos e Produto" />
+    <meta
+      property="og:description"
+      content="Discovery, Service Design e UX Research aplicados a serviços públicos e regulatórios. Estudos de caso na ANAC, na ANS e no Guia de Acessibilidade Digital do gov.br."
+    />
     <meta property="og:image" content="https://hpportifolio.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Henrique Pucci, Service Design e Engenharia de Software." />
+    <meta property="og:image:alt" content="Henrique Pucci, Analista de Requisitos e Produto." />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Henrique Pucci · Service Design e Engenharia de Software" />
-    <meta name="twitter:description" content="Service Design, UX/UI e engenharia de software aplicados à transformação digital do governo federal brasileiro." />
+    <meta name="twitter:title" content="Henrique Pucci · Analista de Requisitos e Produto" />
+    <meta
+      name="twitter:description"
+      content="Discovery, Service Design e UX Research aplicados a serviços públicos e regulatórios."
+    />
     <meta name="twitter:image" content="https://hpportifolio.vercel.app/og-image.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,30 +46,131 @@
       href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
     />
 
+    <script>
+      /* Aplica as preferências de acessibilidade antes da primeira pintura,
+         para a página nunca piscar no tema ou no tamanho de texto errado. */
+      (function () {
+        try {
+          var salvo = JSON.parse(localStorage.getItem("hp:preferencias") || "{}");
+          var raiz = document.documentElement;
+          if (salvo.highContrast) raiz.dataset.theme = "contrast";
+          var escalas = [1, 1.125, 1.25];
+          if (escalas[salvo.fontStep]) raiz.style.setProperty("--fs-scale", String(escalas[salvo.fontStep]));
+          /* Só com script ativo o conteúdo começa escondido para ser revelado. */
+          raiz.classList.add("js");
+        } catch (erro) {
+          /* navegação anônima ou storage bloqueado: segue no padrão */
+        }
+      })();
+    </script>
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Henrique Pucci",
-        "url": "https://hpportifolio.vercel.app/",
-        "jobTitle": "Service Designer e Engenheiro de Software",
-        "description": "Service Design, UX/UI e engenharia de software aplicados a serviços públicos digitais.",
-        "alumniOf": {
-          "@type": "CollegeOrUniversity",
-          "name": "Universidade de Brasília"
-        },
-        "knowsAbout": [
-          "Service Design",
-          "UX Research",
-          "Acessibilidade digital",
-          "WCAG 2.1",
-          "eMAG",
-          "Engenharia de requisitos",
-          "React"
-        ],
-        "sameAs": [
-          "https://linkedin.com/in/henrique-pucci",
-          "https://github.com/HenriPucci"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://hpportifolio.vercel.app/#henrique-pucci",
+            "name": "Henrique Pucci",
+            "url": "https://hpportifolio.vercel.app/",
+            "image": "https://hpportifolio.vercel.app/og-image.png",
+            "email": "mailto:pucci.rique1234@gmail.com",
+            "jobTitle": "Analista de Requisitos e Produto",
+            "description": "Analista de Requisitos e Produto com atuação desde 2021 em transformação digital de serviços públicos e regulatórios. Planeja e facilita ciclos de Discovery e Service Design e converte regras de negócio e pesquisa com usuários em requisitos, jornadas, service blueprints, protótipos e roadmaps.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Brasília",
+              "addressRegion": "DF",
+              "addressCountry": "BR"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Universidade de Brasília",
+              "url": "https://www.unb.br/"
+            },
+            "hasCredential": {
+              "@type": "EducationalOccupationalCredential",
+              "credentialCategory": "Bachelor's degree",
+              "name": "Bacharelado em Engenharia de Software",
+              "educationalLevel": "Componentes curriculares concluídos, aguardando colação de grau"
+            },
+            "knowsLanguage": [
+              { "@type": "Language", "name": "Português", "alternateName": "pt-BR" },
+              { "@type": "Language", "name": "Inglês", "alternateName": "en" }
+            ],
+            "knowsAbout": [
+              "Análise de requisitos",
+              "Requisitos funcionais e não funcionais",
+              "Histórias de usuário",
+              "BDD",
+              "Discovery de produto",
+              "Service Design",
+              "UX Research",
+              "Teste de usabilidade",
+              "Acessibilidade digital",
+              "WCAG 2.2",
+              "eMAG",
+              "Design System Gov.br",
+              "Figma",
+              "Miro",
+              "SQL",
+              "Python",
+              "Power BI"
+            ],
+            "seeks": {
+              "@type": "Demand",
+              "name": "Vagas de Analista de Requisitos, Analista de Produto e Business Analyst"
+            },
+            "sameAs": [
+              "https://linkedin.com/in/henrique-pucci",
+              "https://github.com/HenriPucci",
+              "https://doi.org/10.5220/0013257300003928"
+            ]
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://hpportifolio.vercel.app/#pagina",
+            "url": "https://hpportifolio.vercel.app/",
+            "name": "Henrique Pucci · Analista de Requisitos e Produto",
+            "inLanguage": "pt-BR",
+            "mainEntity": { "@id": "https://hpportifolio.vercel.app/#henrique-pucci" }
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://doi.org/10.5220/0013257300003928",
+            "headline": "Exploring the Role of Service Design in Software Development: A Systematic Mapping",
+            "author": { "@id": "https://hpportifolio.vercel.app/#henrique-pucci" },
+            "datePublished": "2025",
+            "pagination": "433-440",
+            "identifier": "10.5220/0013257300003928",
+            "sameAs": "https://doi.org/10.5220/0013257300003928",
+            "isPartOf": {
+              "@type": "PublicationEvent",
+              "name": "ENASE 2025, International Conference on Evaluation of Novel Approaches to Software Engineering"
+            },
+            "about": ["Service Design", "Engenharia de Software", "Mapeamento sistemático"]
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "ANAC, programa de transformação digital",
+            "creator": { "@id": "https://hpportifolio.vercel.app/#henrique-pucci" },
+            "about": "Oito frentes de transformação digital para cinco superintendências da Agência Nacional de Aviação Civil, com Discovery, Service Design, prototipação e conversão em requisitos.",
+            "dateCreated": "2024"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Minha ANS Digital",
+            "creator": { "@id": "https://hpportifolio.vercel.app/#henrique-pucci" },
+            "about": "Discovery, jornada regulatória, storyboards e protótipo de alta fidelidade para os serviços digitais da Agência Nacional de Saúde Suplementar, em parceria com a Secretaria de Governo Digital.",
+            "dateCreated": "2024"
+          },
+          {
+            "@type": "CreativeWork",
+            "name": "Guia de Boas Práticas para Acessibilidade Digital",
+            "creator": { "@id": "https://hpportifolio.vercel.app/#henrique-pucci" },
+            "about": "Guia de 91 páginas com 16 critérios práticos de acessibilidade, baseado em WCAG 2.2, eMAG e Design System Gov.br, publicado em domínio gov.br.",
+            "inLanguage": "pt-BR"
+          }
         ]
       }
     </script>

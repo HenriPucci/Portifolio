@@ -1,9 +1,29 @@
+/**
+ * Textos da interface, em português e inglês, com paridade factual.
+ * Os estudos de caso vivem em `projects.js`; aqui fica só o texto de chrome,
+ * rótulos e as seções institucionais.
+ */
+
 const NAV_IDS = [
   { id: "sobre", pt: "Sobre", en: "About" },
   { id: "trajetoria", pt: "Trajetória", en: "Journey" },
   { id: "projetos", pt: "Projetos", en: "Projects" },
   { id: "contato", pt: "Contato", en: "Contact" }
 ];
+
+/** Dados de contato e arquivos públicos, referenciados em um lugar só. */
+export const PERFIL = {
+  nome: "Henrique Pucci",
+  cargo: "Analista de Requisitos e Produto",
+  email: "pucci.rique1234@gmail.com",
+  linkedin: "https://linkedin.com/in/henrique-pucci",
+  github: "https://github.com/HenriPucci",
+  site: "https://hpportifolio.vercel.app",
+  local: "Brasília, DF, Brasil",
+  // Para trocar o currículo, substitua este arquivo em public/assets/ mantendo o nome.
+  curriculo: "/assets/Curriculo_Henrique_Pucci.pdf",
+  curriculoDownload: "Henrique-Pucci-Analista-de-Requisitos.pdf"
+};
 
 export const TRANSLATIONS = {
   pt: {
@@ -19,147 +39,161 @@ export const TRANSLATIONS = {
       closeLabel: "Fechar menu"
     },
     hero: {
-      eyebrow: "Service design, UX e engenharia de software",
-      role: "Projeto serviços públicos digitais e também os construo.",
-      lede: "Estou no último semestre de Engenharia de Software na UnB. Trabalho entre a regra de negócio e a tela: mapeio serviços densos de governo, facilito oficinas com quem opera o serviço e entrego requisito, protótipo e código que a equipe consegue usar.",
-      ctaPrimary: "Ver os projetos",
-      ctaSecondary: "Falar comigo",
+      eyebrow: "Discovery · Service Design · UX Research",
+      role: "Analista de Requisitos e Produto",
+      lede: "Atuo desde 2021 em transformação digital de serviços públicos e regulatórios. Planejo e facilito ciclos de Discovery e Service Design e transformo regras de negócio e pesquisa com usuários em requisitos, jornadas, service blueprints, protótipos e roadmaps. Minha formação em Engenharia de Software me permite conectar necessidade de negócio, experiência do usuário e viabilidade técnica.",
+      ctaPrimary: "Ver projetos",
+      ctaResume: "Baixar currículo",
+      ctaLinkedin: "LinkedIn",
+      ctaContact: "Falar comigo",
       portraitAlt: "Retrato de Henrique Pucci.",
-      proof: ["4 órgãos federais", "Guia publicado no gov.br", "Artigo na ENASE 2025", "Debian e CAPJu"]
+      proof: [
+        "Engenharia de Software, UnB",
+        "4 órgãos federais e 2 agências reguladoras",
+        "Guia publicado no gov.br",
+        "Artigo na ENASE 2025"
+      ]
     },
     about: {
       eyebrow: "Sobre",
-      heading: "Design que se sustenta na engenharia.",
+      heading: "Requisitos que se sustentam em pesquisa e em engenharia.",
       paragraphs: [
-        "O que eu faço, na prática, é traduzir. Pego uma regra de negócio densa, entendo quem ela afeta e devolvo isso como um serviço que a pessoa consegue usar sem precisar de ajuda.",
-        "Meu método vem de pesquisa em UX, service design e estratégia de produto. Mapeio ecossistemas de serviço, facilito oficinas de co-criação e uso service blueprints e mapas de jornada no Miro para transformar o que aparece na sala em requisito documentado e protótipo de alta fidelidade no Figma.",
-        "Esse trabalho me levou para dentro da transformação digital do governo federal. Atuei no Discovery junto ao Ministério da Economia e ajudei a estruturar padrões nacionais de acessibilidade, escrevendo diretrizes e componentes para o Guia Brasileiro de Acessibilidade Digital e Inclusão com a SGD e o MGI, aplicando WCAG 2.1 e eMAG.",
-        "A parte de engenharia não é enfeite. Sustento decisão de design com dado, usando SQL, Docker, DBeaver e Power BI, e montei a arquitetura de ETL que consolidou bases de acidentes aeronáuticos civis. Também contribuo com software livre no ecossistema Debian e no CAPJu, sistema de gestão processual da FGA/UnB."
+        "O que eu faço, na prática, é traduzir. Pego uma regra de negócio densa, entendo quem ela afeta e devolvo isso como requisito, fluxo e protótipo que a equipe consegue executar.",
+        "Meu método vem de Discovery, Service Design e UX Research. Planejo e facilito as oficinas, mapeio ecossistemas de serviço, construo jornadas e service blueprints e converto cada artefato validado em requisito funcional e não funcional, história de usuário e backlog priorizado.",
+        "Esse trabalho me levou para dentro da transformação digital do governo federal, com ANAC, ANS, Ministério da Economia, SGD, DTI e MGI. Também integrei a equipe do Guia de Boas Práticas para Acessibilidade Digital, publicado em domínio gov.br, aplicando WCAG, eMAG e o Design System Gov.br.",
+        "A formação em Engenharia de Software é o que fecha o ciclo. Sustento decisão com dado, usando SQL, Python e Power BI, prototipo no Figma e leio o código quando preciso discutir viabilidade com a equipe de desenvolvimento."
       ],
       quote:
-        "Decisão sustentada por evidência: pesquisa antes do traço, teste antes da entrega, e código que aguenta o que foi desenhado.",
+        "Decisão sustentada por evidência: pesquisa antes do traço, teste antes da entrega, e requisito que a equipe de desenvolvimento consegue executar.",
       stats: [
-        { value: "4", label: "Órgãos federais atendidos" },
-        { value: "ENASE 2025", label: "Publicação internacional" },
-        { value: "Debian e CAPJu", label: "Projetos open source" }
-      ]
+        { value: "Desde 2021", label: "Em transformação digital de serviços públicos" },
+        { value: "8 frentes", label: "De transformação digital na ANAC" },
+        { value: "ENASE 2025", label: "Mapeamento sistemático publicado" }
+      ],
+      education: {
+        label: "Formação",
+        value: "Bacharelado em Engenharia de Software, Universidade de Brasília",
+        detail: "Componentes curriculares concluídos, aguardando colação de grau."
+      },
+      languages: {
+        label: "Idiomas",
+        value: "Português nativo e inglês avançado"
+      }
     },
     experience: {
       eyebrow: "Trajetória",
       heading: "Onde trabalhei e o que saiu de lá.",
       items: [
         {
-          role: "Bolsista de transformação digital e UX",
-          org: "ITRAC / UnB, junto ao Ministério da Economia, SGD, DTI e MGI",
-          desc: "Conduzi iniciativas de Discovery em quatro órgãos federais, mapeando ecossistemas de serviço e traduzindo regra de negócio de governo em requisito acionável. Facilitei oficinas de co-criação com servidores e gestores, entregando service blueprints, jornadas do usuário e fluxos de ecossistema para programas como ComprasGov, Bens Patrimoniais e Luz para Todos."
+          role: "Analista de Requisitos e UX, transformação digital",
+          org: "ITRAC / UnB, com ANAC, ANS, Ministério da Economia, SGD, DTI e MGI",
+          period: "2021 até hoje",
+          desc: "Planejo e facilito ciclos de Discovery e Service Design em órgãos federais e agências reguladoras. Mapeio ecossistemas de serviço, construo jornadas, service blueprints e protótipos, conduzo testes com usuários e converto os artefatos validados em requisitos, histórias de usuário e backlog priorizado para as equipes de produto."
         },
         {
           role: "Bolsista de acessibilidade digital",
-          org: "Ministério da Gestão e Inovação (MGI)",
-          desc: "Co-desenvolvi o Guia Brasileiro de Acessibilidade Digital e Inclusão, convertendo WCAG 2.1 e eMAG em diretrizes práticas para o Design System Gov.br. O guia foi publicado no domínio oficial gov.br e passou a orientar interfaces digitais de todo o governo federal."
+          org: "Ministério da Gestão e Inovação e Secretaria de Governo Digital",
+          period: "2022 a 2023",
+          desc: "Integrei a equipe do Guia de Boas Práticas para Acessibilidade Digital, com 91 páginas e 16 critérios práticos. Converti WCAG, eMAG e o Design System Gov.br em diretrizes aplicáveis, montei exemplos corretos e incorretos e publiquei o material no domínio gov.br."
         },
         {
           role: "Contribuidor open source",
-          org: "CAPJu e Debian Brasil",
-          desc: "Correção de bugs, automação de testes e documentação técnica no CAPJu, sistema de gestão de processos judiciais da FGA/UnB, além de manutenção de pacotes no ecossistema Debian."
+          org: "CAPJu, FGA/UnB, e Debian Brasil",
+          period: "2022 até hoje",
+          desc: "Correção de bugs, testes automatizados e documentação técnica no CAPJu, sistema de gestão de processos judiciais da 4ª Vara Cível Federal, além da manutenção de pacotes no ecossistema Debian."
         }
       ]
     },
     projects: {
       eyebrow: "Projetos",
-      heading: "Trabalho selecionado.",
-      cta: "Ver o caso",
+      heading: "Estudos de caso.",
+      intro:
+        "Cada caso mostra contexto, meu papel, método, artefatos, validação e o que foi entregue. Meta ainda não medida aparece em seção separada, nunca como resultado.",
+      cta: "Abrir o estudo de caso",
       filterLabel: "Filtrar projetos por área",
-      resultCount: (total) =>
-        total === 1 ? "1 projeto encontrado" : `${total} projetos encontrados`,
+      clear: "Limpar filtro",
+      resultCount: (total) => (total === 1 ? "1 projeto encontrado" : `${total} projetos encontrados`),
       categoryLabels: {
         Todos: "Todos",
-        "UX/UI": "UX/UI",
-        Pesquisa: "Pesquisa",
-        Desenvolvimento: "Desenvolvimento"
+        "Requisitos e Produto": "Requisitos e Produto",
+        "Service Design e UX": "Service Design e UX",
+        Acessibilidade: "Acessibilidade",
+        Dados: "Dados",
+        "Engenharia de Software": "Engenharia de Software"
       }
     },
     skills: {
-      eyebrow: "Ferramentas e métodos",
+      eyebrow: "Competências",
       heading: "O que eu uso para trabalhar.",
       categories: [
-        {
-          category: "UX/UI e design",
-          items: [
-            "Figma",
-            "Miro",
-            "Wireframing",
-            "Prototipagem de alta fidelidade",
-            "Design system",
-            "Service blueprint",
-            "Jornada do usuário",
-            "Pesquisa com usuários",
-            "Teste de usabilidade"
-          ]
-        },
         {
           category: "Requisitos e produto",
           items: [
             "Levantamento de requisitos",
-            "Análise funcional",
-            "Discovery",
-            "User stories",
+            "Requisitos funcionais e não funcionais",
+            "Histórias de usuário",
             "BDD",
+            "Análise funcional",
+            "Backlog e priorização",
             "Documentação técnica"
           ]
         },
         {
-          category: "Acessibilidade",
-          items: ["WCAG 2.1", "eMAG", "Design inclusivo", "Auditoria de acessibilidade"]
-        },
-        {
-          category: "Desenvolvimento e dados",
+          category: "Discovery e pesquisa",
           items: [
-            "React",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python",
-            "Node.js",
-            "PHP",
-            "SQL",
-            "MySQL",
-            "PostgreSQL",
-            "Docker",
-            "DBeaver",
-            "Power BI",
-            "Git"
-          ]
-        },
-        {
-          category: "Métodos",
-          items: [
-            "Design thinking",
-            "Lean UX",
-            "Scrum",
-            "Kanban",
             "Discovery de produto",
+            "Entrevista com usuários",
+            "Teste de usabilidade",
+            "Benchmarking",
+            "Mapeamento sistemático",
             "Facilitação de oficinas"
           ]
         },
         {
-          category: "Idiomas",
-          items: ["Português nativo", "Inglês intermediário"]
+          category: "Service Design e UX",
+          items: [
+            "Service blueprint",
+            "Jornada do usuário",
+            "Mapa de ecossistema",
+            "Personas",
+            "Storyboard",
+            "Canvas de MVP",
+            "Prototipagem de baixa e alta fidelidade",
+            "Figma",
+            "Miro"
+          ]
+        },
+        {
+          category: "Acessibilidade",
+          items: ["WCAG 2.2", "WCAG 2.1", "eMAG", "Design System Gov.br", "Design inclusivo", "Auditoria de acessibilidade"]
+        },
+        {
+          category: "Dados e engenharia",
+          items: ["SQL", "Python", "Power BI", "ETL", "PostgreSQL", "MySQL", "Docker", "React", "JavaScript", "Git"]
+        },
+        {
+          category: "Métodos",
+          items: ["Design Thinking", "Lean Inception", "Design Sprint", "Scrum", "Kanban"]
         }
       ]
     },
     contact: {
       eyebrow: "Contato",
-      heading: "Vamos falar do seu problema.",
+      heading: "Vamos conversar sobre a vaga ou o projeto.",
       description:
-        "Se você tem um serviço complexo para redesenhar, uma pesquisa para conduzir ou um produto que precisa sair do papel, me escreva. Respondo pelo formulário ou pelos canais abaixo.",
+        "Estou aberto a posições de Analista de Requisitos, Analista de Produto e Business Analyst. O caminho mais rápido é o e-mail abaixo, e o formulário chega no mesmo lugar.",
+      emailLabel: "E-mail",
+      copy: "Copiar",
+      copied: "Copiado",
+      copyAria: "Copiar endereço de e-mail",
+      resume: "Baixar currículo em PDF",
       links: [
         { platform: "LinkedIn", label: "Conectar no LinkedIn", url: "https://linkedin.com/in/henrique-pucci" },
         { platform: "GitHub", label: "Ver repositórios", url: "https://github.com/HenriPucci" }
       ]
     },
     form: {
+      title: "Ou escreva por aqui",
       nameLabel: "Nome",
       namePlaceholder: "Seu nome",
       emailLabel: "E-mail",
@@ -171,10 +205,12 @@ export const TRANSLATIONS = {
       sending: "Enviando",
       retry: "Tentar de novo",
       success: "Mensagem enviada. Respondo assim que possível.",
-      error: "Não consegui enviar agora. Tente de novo ou me chame pelo LinkedIn."
+      error: "Não consegui enviar agora. Tente de novo ou me chame pelo e-mail.",
+      invalid: "Preencha nome, e-mail válido e mensagem antes de enviar."
     },
     footer: {
       copyright: "© 2026 Henrique Pucci",
+      role: "Analista de Requisitos e Produto, Brasília, DF",
       builtWith: "Feito em React e publicado na Vercel.",
       sourceLink: "Código no GitHub"
     },
@@ -188,15 +224,22 @@ export const TRANSLATIONS = {
       textSizeOption: (step) => ["Texto padrão", "Texto grande", "Texto muito grande"][step]
     },
     modal: {
-      close: "Fechar detalhes do projeto",
+      close: "Fechar estudo de caso",
       contextLabel: "Contexto",
+      roleLabel: "Meu papel",
+      scopeLabel: "Escopo e participantes",
+      processLabel: "Processo",
+      frontsLabel: "Frentes de trabalho",
+      artifactsLabel: "Artefatos e requisitos",
+      validationLabel: "Validação",
+      resultsLabel: "Resultados comprovados",
+      nextStepsLabel: "Métricas propostas e próximos passos",
+      nextStepsNote: "Metas de validação ainda não medidas.",
+      evidenceLabel: "Evidências",
       galleryLabel: "Artefatos do projeto",
       zoom: "Ampliar imagem",
       closeZoom: "Fechar imagem ampliada",
-      workshopLabel: "Facilitação e prática",
-      processLabel: "Processo",
-      artifactsLabel: "Entregas e evidências",
-      restricted: "acesso interno"
+      restricted: "não publicado"
     }
   },
 
@@ -213,146 +256,161 @@ export const TRANSLATIONS = {
       closeLabel: "Close menu"
     },
     hero: {
-      eyebrow: "Service design, UX and software engineering",
-      role: "I design public digital services and build them too.",
-      lede: "I am in my final semester of Software Engineering at UnB. I work between the business rule and the screen: mapping dense government services, facilitating workshops with the people who run them, and delivering requirements, prototypes and code a team can actually use.",
+      eyebrow: "Discovery · Service Design · UX Research",
+      role: "Requirements and Product Analyst",
+      lede: "Since 2021 I have worked on the digital transformation of public and regulatory services. I plan and facilitate Discovery and Service Design cycles and turn business rules and user research into requirements, journeys, service blueprints, prototypes and roadmaps. My Software Engineering background lets me connect business needs, user experience and technical feasibility.",
       ctaPrimary: "See the work",
-      ctaSecondary: "Get in touch",
+      ctaResume: "Download CV",
+      ctaLinkedin: "LinkedIn",
+      ctaContact: "Get in touch",
       portraitAlt: "Portrait of Henrique Pucci.",
-      proof: ["4 federal agencies", "Guide published on gov.br", "Paper at ENASE 2025", "Debian and CAPJu"]
+      proof: [
+        "Software Engineering, UnB",
+        "4 federal agencies and 2 regulators",
+        "Guide published on gov.br",
+        "Paper at ENASE 2025"
+      ]
     },
     about: {
       eyebrow: "About",
-      heading: "Design held up by engineering.",
+      heading: "Requirements held up by research and by engineering.",
       paragraphs: [
-        "What I do, in practice, is translate. I take a dense business rule, work out who it affects, and give it back as a service people can use without help.",
-        "My method comes from UX research, service design and product strategy. I map service ecosystems, facilitate co-creation workshops, and use service blueprints and journey maps in Miro to turn what surfaces in the room into documented requirements and high-fidelity prototypes in Figma.",
-        "That work took me inside the digital transformation of the Brazilian federal government. I ran Discovery with the Ministry of Economy and helped structure national accessibility standards, writing guidelines and components for the Brazilian Guide to Digital Accessibility and Inclusion with SGD and MGI, applying WCAG 2.1 and eMAG.",
-        "The engineering side is not decoration. I back design decisions with data using SQL, Docker, DBeaver and Power BI, and I built the ETL architecture that consolidated Brazilian civil aviation accident databases. I also contribute to free software in the Debian ecosystem and to CAPJu, the judicial process management system from FGA/UnB."
+        "What I do, in practice, is translate. I take a dense business rule, work out who it affects and give it back as requirements, flows and prototypes a team can execute.",
+        "My method comes from Discovery, Service Design and UX Research. I plan and facilitate the workshops, map service ecosystems, build journeys and service blueprints, and turn every validated artifact into functional and non-functional requirements, user stories and a prioritized backlog.",
+        "That work took me inside the digital transformation of the Brazilian federal government, with ANAC, ANS, the Ministry of Economy, SGD, DTI and MGI. I was also part of the team behind the Digital Accessibility Good Practice Guide, published on a gov.br domain, applying WCAG, eMAG and the Gov.br Design System.",
+        "The Software Engineering background closes the loop. I back decisions with data using SQL, Python and Power BI, prototype in Figma, and read the code when feasibility has to be discussed with the development team."
       ],
       quote:
-        "Decisions backed by evidence: research before the first line, testing before delivery, and code that holds up what was designed.",
+        "Decisions backed by evidence: research before the first sketch, testing before delivery, and requirements the development team can actually execute.",
       stats: [
-        { value: "4", label: "Federal agencies served" },
-        { value: "ENASE 2025", label: "International publication" },
-        { value: "Debian and CAPJu", label: "Open source projects" }
-      ]
+        { value: "Since 2021", label: "In public service digital transformation" },
+        { value: "8 fronts", label: "Of digital transformation at ANAC" },
+        { value: "ENASE 2025", label: "Systematic mapping published" }
+      ],
+      education: {
+        label: "Education",
+        value: "BSc in Software Engineering, University of Brasília",
+        detail: "Coursework completed, awaiting the graduation ceremony."
+      },
+      languages: {
+        label: "Languages",
+        value: "Native Portuguese and advanced English"
+      }
     },
     experience: {
       eyebrow: "Journey",
       heading: "Where I worked and what came out of it.",
       items: [
         {
-          role: "Digital transformation and UX fellow",
-          org: "ITRAC / UnB, with the Ministry of Economy, SGD, DTI and MGI",
-          desc: "Led Discovery initiatives across four federal agencies, mapping service ecosystems and translating government business rules into actionable requirements. Facilitated co-creation workshops with civil servants and managers, delivering service blueprints, user journeys and ecosystem flows for programs such as ComprasGov, Public Assets and Luz para Todos."
+          role: "Requirements and UX Analyst, digital transformation",
+          org: "ITRAC / UnB, with ANAC, ANS, the Ministry of Economy, SGD, DTI and MGI",
+          period: "2021 to present",
+          desc: "I plan and facilitate Discovery and Service Design cycles in federal agencies and regulators. I map service ecosystems, build journeys, service blueprints and prototypes, run user tests, and turn validated artifacts into requirements, user stories and a prioritized backlog for the product teams."
         },
         {
           role: "Digital accessibility fellow",
-          org: "Ministry of Management and Innovation (MGI)",
-          desc: "Co-developed the Brazilian Guide to Digital Accessibility and Inclusion, turning WCAG 2.1 and eMAG into practical guidelines for the Gov.br Design System. The guide was published on the official gov.br domain and now guides digital interfaces across the federal government."
+          org: "Ministry of Management and Innovation and Government Digital Secretariat",
+          period: "2022 to 2023",
+          desc: "I worked on the team behind the Digital Accessibility Good Practice Guide, 91 pages with 16 practical criteria. I turned WCAG, eMAG and the Gov.br Design System into applicable guidelines, built correct and incorrect examples, and published the material on the gov.br domain."
         },
         {
           role: "Open source contributor",
-          org: "CAPJu and Debian Brasil",
-          desc: "Bug fixing, test automation and technical documentation on CAPJu, the judicial process management system from FGA/UnB, plus package maintenance in the Debian ecosystem."
+          org: "CAPJu, FGA/UnB, and Debian Brasil",
+          period: "2022 to present",
+          desc: "Bug fixing, automated tests and technical documentation on CAPJu, the judicial process management system of the 4th Federal Civil Court, plus package maintenance in the Debian ecosystem."
         }
       ]
     },
     projects: {
       eyebrow: "Projects",
-      heading: "Selected work.",
-      cta: "Open the case",
+      heading: "Case studies.",
+      intro:
+        "Each case shows context, my role, method, artifacts, validation and what was delivered. Targets that have not been measured appear in a separate section, never as results.",
+      cta: "Open the case study",
       filterLabel: "Filter projects by area",
+      clear: "Clear filter",
       resultCount: (total) => (total === 1 ? "1 project found" : `${total} projects found`),
       categoryLabels: {
         Todos: "All",
-        "UX/UI": "UX/UI",
-        Pesquisa: "Research",
-        Desenvolvimento: "Development"
+        "Requisitos e Produto": "Requirements and Product",
+        "Service Design e UX": "Service Design and UX",
+        Acessibilidade: "Accessibility",
+        Dados: "Data",
+        "Engenharia de Software": "Software Engineering"
       }
     },
     skills: {
-      eyebrow: "Tools and methods",
+      eyebrow: "Skills",
       heading: "What I work with.",
       categories: [
         {
-          category: "UX/UI and design",
-          items: [
-            "Figma",
-            "Miro",
-            "Wireframing",
-            "High-fidelity prototyping",
-            "Design system",
-            "Service blueprint",
-            "User journey",
-            "User research",
-            "Usability testing"
-          ]
-        },
-        {
           category: "Requirements and product",
           items: [
-            "Requirements gathering",
-            "Functional analysis",
-            "Discovery",
+            "Requirements elicitation",
+            "Functional and non-functional requirements",
             "User stories",
             "BDD",
+            "Functional analysis",
+            "Backlog and prioritization",
             "Technical documentation"
           ]
         },
         {
-          category: "Accessibility",
-          items: ["WCAG 2.1", "eMAG", "Inclusive design", "Accessibility audit"]
-        },
-        {
-          category: "Development and data",
+          category: "Discovery and research",
           items: [
-            "React",
-            "JavaScript",
-            "TypeScript",
-            "HTML",
-            "CSS",
-            "Python",
-            "Node.js",
-            "PHP",
-            "SQL",
-            "MySQL",
-            "PostgreSQL",
-            "Docker",
-            "DBeaver",
-            "Power BI",
-            "Git"
-          ]
-        },
-        {
-          category: "Methods",
-          items: [
-            "Design thinking",
-            "Lean UX",
-            "Scrum",
-            "Kanban",
             "Product discovery",
+            "User interviews",
+            "Usability testing",
+            "Benchmarking",
+            "Systematic mapping",
             "Workshop facilitation"
           ]
         },
         {
-          category: "Languages",
-          items: ["Portuguese, native", "English, intermediate"]
+          category: "Service Design and UX",
+          items: [
+            "Service blueprint",
+            "User journey",
+            "Ecosystem map",
+            "Personas",
+            "Storyboard",
+            "MVP canvas",
+            "Low and high fidelity prototyping",
+            "Figma",
+            "Miro"
+          ]
+        },
+        {
+          category: "Accessibility",
+          items: ["WCAG 2.2", "WCAG 2.1", "eMAG", "Gov.br Design System", "Inclusive design", "Accessibility audit"]
+        },
+        {
+          category: "Data and engineering",
+          items: ["SQL", "Python", "Power BI", "ETL", "PostgreSQL", "MySQL", "Docker", "React", "JavaScript", "Git"]
+        },
+        {
+          category: "Methods",
+          items: ["Design Thinking", "Lean Inception", "Design Sprint", "Scrum", "Kanban"]
         }
       ]
     },
     contact: {
       eyebrow: "Contact",
-      heading: "Let's talk about your problem.",
+      heading: "Let's talk about the role or the project.",
       description:
-        "If you have a complex service to redesign, research to run, or a product that needs to leave the slide deck, write to me. I answer through the form or the channels below.",
+        "I am open to Requirements Analyst, Product Analyst and Business Analyst positions. Email is the fastest route, and the form lands in the same inbox.",
+      emailLabel: "Email",
+      copy: "Copy",
+      copied: "Copied",
+      copyAria: "Copy email address",
+      resume: "Download CV as PDF",
       links: [
         { platform: "LinkedIn", label: "Connect on LinkedIn", url: "https://linkedin.com/in/henrique-pucci" },
         { platform: "GitHub", label: "Browse repositories", url: "https://github.com/HenriPucci" }
       ]
     },
     form: {
+      title: "Or write here",
       nameLabel: "Name",
       namePlaceholder: "Your name",
       emailLabel: "Email",
@@ -364,10 +422,12 @@ export const TRANSLATIONS = {
       sending: "Sending",
       retry: "Try again",
       success: "Message sent. I will reply as soon as I can.",
-      error: "It did not go through. Try again or reach me on LinkedIn."
+      error: "It did not go through. Try again or reach me by email.",
+      invalid: "Fill in your name, a valid email and a message before sending."
     },
     footer: {
       copyright: "© 2026 Henrique Pucci",
+      role: "Requirements and Product Analyst, Brasília, Brazil",
       builtWith: "Built with React, deployed on Vercel.",
       sourceLink: "Source on GitHub"
     },
@@ -381,15 +441,22 @@ export const TRANSLATIONS = {
       textSizeOption: (step) => ["Default text", "Large text", "Extra large text"][step]
     },
     modal: {
-      close: "Close project details",
+      close: "Close case study",
       contextLabel: "Context",
+      roleLabel: "My role",
+      scopeLabel: "Scope and participants",
+      processLabel: "Process",
+      frontsLabel: "Work fronts",
+      artifactsLabel: "Artifacts and requirements",
+      validationLabel: "Validation",
+      resultsLabel: "Confirmed results",
+      nextStepsLabel: "Proposed metrics and next steps",
+      nextStepsNote: "Validation targets that have not been measured yet.",
+      evidenceLabel: "Evidence",
       galleryLabel: "Project artifacts",
       zoom: "Enlarge image",
       closeZoom: "Close enlarged image",
-      workshopLabel: "Facilitation in practice",
-      processLabel: "Process",
-      artifactsLabel: "Deliverables and evidence",
-      restricted: "internal access"
+      restricted: "not published"
     }
   }
 };

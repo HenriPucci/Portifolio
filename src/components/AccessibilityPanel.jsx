@@ -33,7 +33,7 @@ export default function AccessibilityPanel({
   }, [isOpen, onClose]);
 
   return (
-    <div className="a11y" ref={wrapperRef}>
+    <aside className="a11y" ref={wrapperRef} aria-label={t.a11y.title}>
       {isOpen && (
         <div className="a11y__panel" id="painel-acessibilidade">
           <p className="a11y__title">{t.a11y.title}</p>
@@ -94,6 +94,6 @@ export default function AccessibilityPanel({
       >
         <AccessibilityIcon />
       </button>
-    </div>
+    </aside>
   );
 }

@@ -1,37 +1,33 @@
 import { useMemo, useState } from "react";
-import { CATEGORIES, PROJECTS } from "../data/projects";
+import { CATEGORIES, PROJECTS, campoDoProjeto } from "../data/projects";
 import { mediaDe } from "../data/media";
 import { ArrowIcon } from "./Icons";
 import Reveal from "./Reveal";
 
-function ProjectCard({ project, t, translate, lang, onOpen, index }) {
-  const tags = project.tags?.length ? project.tags : [project.tag];
+function ProjectCard({ project, t, lang, onOpen, index }) {
   const cover = mediaDe(project.id)?.cover;
-  const coverAlt = cover && lang === "en" ? cover.altEn || cover.alt : cover?.alt;
+  const coverAlt = cover ? (lang === "en" ? cover.altEn || cover.alt : cover.alt) : undefined;
 
   return (
     <Reveal as="article" className="card" delay={Math.min(index, 5) * 60}>
       <div className={`card__media ${cover ? "" : "card__media--empty"}`}>
         {cover ? (
-          <img
-            src={cover.src}
-            alt={coverAlt}
-            loading={index < 3 ? "eager" : "lazy"}
-            decoding="async"
-          />
+          <img src={cover.src} alt={coverAlt} loading={index < 3 ? "eager" : "lazy"} decoding="async" />
         ) : (
-          <span aria-hidden="true">{tags[0]}</span>
+          <span aria-hidden="true">{project.categories[0]}</span>
         )}
       </div>
 
       <div className="card__body">
-        <p className="card__tags">{tags.map((tag) => t.projects.categoryLabels[tag]).join(" · ")}</p>
+        <p className="card__tags">
+          {project.categories.map((item) => t.projects.categoryLabels[item]).join(" · ")}
+        </p>
         <h3 className="card__title">
           <button type="button" onClick={() => onOpen(project)}>
-            {translate(project, "title")}
+            {campoDoProjeto(project, "title", lang)}
           </button>
         </h3>
-        <p className="card__summary">{translate(project, "summary")}</p>
+        <p className="card__summary">{campoDoProjeto(project, "summary", lang)}</p>
         <p className="card__footer">
           <span>{t.projects.cta}</span>
           <span aria-hidden="true">
@@ -43,14 +39,12 @@ function ProjectCard({ project, t, translate, lang, onOpen, index }) {
   );
 }
 
-export default function Projects({ t, translate, lang, onOpen }) {
+export default function Projects({ t, lang, onOpen }) {
   const [category, setCategory] = useState("Todos");
 
   const filtered = useMemo(() => {
     if (category === "Todos") return PROJECTS;
-    return PROJECTS.filter((project) =>
-      project.tags ? project.tags.includes(category) : project.tag === category
-    );
+    return PROJECTS.filter((project) => project.categories.includes(category));
   }, [category]);
 
   return (
@@ -58,9 +52,10 @@ export default function Projects({ t, translate, lang, onOpen }) {
       <div className="shell">
         <Reveal className="section__head">
           <p className="eyebrow">{t.projects.eyebrow}</p>
-          <h2 className="display" id="projetos-title" style={{ fontSize: "var(--step-3)" }}>
+          <h2 className="display section__title" id="projetos-title">
             {t.projects.heading}
           </h2>
+          <p className="section__intro">{t.projects.intro}</p>
         </Reveal>
 
         <Reveal>
@@ -76,6 +71,11 @@ export default function Projects({ t, translate, lang, onOpen }) {
                 {t.projects.categoryLabels[item]}
               </button>
             ))}
+            {category !== "Todos" && (
+              <button type="button" className="filter filter--clear" onClick={() => setCategory("Todos")}>
+                {t.projects.clear}
+              </button>
+            )}
           </div>
         </Reveal>
 
@@ -90,7 +90,6 @@ export default function Projects({ t, translate, lang, onOpen }) {
               index={index}
               project={project}
               t={t}
-              translate={translate}
               lang={lang}
               onOpen={onOpen}
             />

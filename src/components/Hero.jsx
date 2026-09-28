@@ -1,4 +1,5 @@
-import { ArrowIcon } from "./Icons";
+import { ArrowIcon, DownloadIcon } from "./Icons";
+import { PERFIL } from "../data/translations";
 import recorte from "../assets/henrique-recorte-limpo.webp";
 
 export default function Hero({ t }) {
@@ -10,7 +11,7 @@ export default function Hero({ t }) {
             {t.hero.eyebrow}
           </p>
           <h1 className="hero__name enter" id="hero-title" style={{ "--enter-delay": "80ms" }}>
-            Henrique Pucci
+            {PERFIL.nome}
           </h1>
           <p className="hero__role enter" style={{ "--enter-delay": "160ms" }}>
             {t.hero.role}
@@ -26,8 +27,26 @@ export default function Hero({ t }) {
                 <ArrowIcon />
               </span>
             </a>
-            <a className="btn btn--ghost" href="#contato">
-              {t.hero.ctaSecondary}
+            <a
+              className="btn btn--ghost"
+              href={PERFIL.curriculo}
+              download={PERFIL.curriculoDownload}
+            >
+              <span aria-hidden="true">
+                <DownloadIcon />
+              </span>
+              {t.hero.ctaResume}
+            </a>
+            <a
+              className="btn btn--ghost"
+              href={PERFIL.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.hero.ctaLinkedin}
+            </a>
+            <a className="btn btn--quiet" href="#contato">
+              {t.hero.ctaContact}
             </a>
           </div>
 

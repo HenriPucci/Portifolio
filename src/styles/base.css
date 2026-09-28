@@ -172,14 +172,16 @@ ol {
   letter-spacing: -0.01em;
 }
 
-/* revelação por scroll */
-.reveal {
+/* Revelação por scroll. Sem JavaScript nada fica escondido: a classe `js` é
+   adicionada por script antes da primeira pintura, então quem lê a página sem
+   executar script recebe o conteúdo já visível. */
+.js .reveal {
   opacity: 0;
   transform: translateY(18px);
   transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease);
   transition-delay: var(--reveal-delay, 0ms);
 }
-.reveal.is-visible {
+.js .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
@@ -196,7 +198,7 @@ ol {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal {
+  .js .reveal {
     opacity: 1;
     transform: none;
   }

@@ -34,17 +34,6 @@ export default function App() {
   const t = TRANSLATIONS[lang];
   const activeSection = useActiveSection(SECTION_IDS);
 
-  /** Devolve o campo já no idioma ativo, caindo para o português quando não há tradução. */
-  const translate = useCallback(
-    (project, field) => {
-      if (lang === "en" && project.translations?.en?.[field] !== undefined) {
-        return project.translations.en[field];
-      }
-      return project[field];
-    },
-    [lang]
-  );
-
   const closeProject = useCallback(() => setOpenProject(null), []);
   const closeMenu = useCallback(() => setMenuOpen(false), []);
   const closeA11y = useCallback(() => setA11yOpen(false), []);
@@ -66,7 +55,7 @@ export default function App() {
         <Hero t={t} />
         <About t={t} />
         <Experience t={t} />
-        <Projects t={t} translate={translate} lang={lang} onOpen={setOpenProject} />
+        <Projects t={t} lang={lang} onOpen={setOpenProject} />
         <Skills t={t} />
         <Contact t={t} />
       </main>
@@ -76,13 +65,7 @@ export default function App() {
       {isMenuOpen && <Drawer t={t} onClose={closeMenu} />}
 
       {openProject && (
-        <ProjectModal
-          project={openProject}
-          t={t}
-          translate={translate}
-          lang={lang}
-          onClose={closeProject}
-        />
+        <ProjectModal project={openProject} t={t} lang={lang} onClose={closeProject} />
       )}
 
       <AccessibilityPanel

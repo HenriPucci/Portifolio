@@ -5,5 +5,11 @@ export default defineConfig({
   plugins: [react()],
   build: {
     target: "es2020"
+  },
+  test: {
+    environment: "jsdom",
+    setupFiles: ["./tests/setup.js"],
+    include: ["tests/**/*.test.{js,jsx}"],
+    restoreMocks: true
   }
 });
